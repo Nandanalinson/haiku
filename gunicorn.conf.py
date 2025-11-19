@@ -1,3 +1,4 @@
-workers = 4
-worker_class = "uvicorn.workers.UvicornWorker"
-bind = "0.0.0.0:8000"
+workers = 3
+worker_class = "sync"
+bind = "0.0.0.0:10000"
+timeout = 120
