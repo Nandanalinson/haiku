@@ -1,6 +1,6 @@
 # 🌸 Haiku Generator
 
-*A word-powered haiku generator built with Flask, HTML, CSS, JavaScript, and the Grok Mini API.*
+*A word-powered haiku generator built with Flask, HTML, CSS, JavaScript, and the Gemini API.*
 
 ## ✨ Overview
 
@@ -9,7 +9,7 @@ The project combines:
 
 * **Flask** – backend server
 * **HTML / CSS / JavaScript** – frontend UI
-* **Grok Mini (grmini) API** – AI that generates haiku responses
+* **Gemini API** – AI that generates haiku responses
 
 This project is lightweight, beginner-friendly, and easy to deploy on services like Render, Railway, or Heroku.
 
@@ -21,7 +21,7 @@ This project is lightweight, beginner-friendly, and easy to deploy on services l
 * ⚡ Instant API-driven responses
 * 🎨 Simple, responsive UI (HTML/CSS/JS)
 * 🔧 Flask backend with clean API routes
-* 🧠 Uses Grok Mini API for haiku generation
+* 🧠 Uses Gemini API for haiku generation
 
 ---
 
