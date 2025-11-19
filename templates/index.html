@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>AI Haiku Poet Gemini</title>
+  </head>
+  <body>
+    <main class="container">
+      <h4>AI Haiku Poet Gemini</h4>
+      <form id="haiku-form">
+        <div class="grid" style="display: flex; align-items: center;">
+          <input type="text" id="theme" name="theme" placeholder="Enter Haiku Theme" required
+										 autocomplete="off" style="width: 70%;">
+	  <button type="submit" style="margin-left: 10px; width: 30%">Submit</button>
+        </div>
+       </form>
+       <div id="haiku-result"></div>
+      </main>	
+    </body>
+</html>
+
