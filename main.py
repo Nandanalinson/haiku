@@ -20,7 +20,13 @@ app = Flask(__name__)
 def hello_world():
     return render_template('index.html')
 
-
+@app.route('/haikus')
+def haikus():
+    connect = sqlite3.connect('haikus.db')
+    cur=connect.cursor()
+    cur.execute("SELECT theme,haiku FROM haikus ")
+    hai=cur.fetchall()
+    return hai
 
 @app.route("/generate-haiku", methods=['POST'])
 def generate_haiku():
