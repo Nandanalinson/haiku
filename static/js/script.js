@@ -1,6 +1,12 @@
 document.getElementById('haiku-form').addEventListener('submit' , function(event){
     event.preventDefault();
-    const theme = document.getElementById('theme').Value;
+
+
+    const themeInput = document.getElementById('theme');
+    const theme = themeInput ? themeInput.value.trim() : '';
+
+    console.log("Theme:", theme);
+
     fetch('/generate-haiku',{
         method : 'POST',
         headers : {

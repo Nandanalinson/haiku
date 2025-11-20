@@ -19,14 +19,15 @@ def hello_world():
 
 @app.route("/generate-haiku", methods=['POST'])
 def generate_haiku():
+
     data = request.get_json()
+
+
+    print("Received data:", data)
     theme = data.get('theme',None)
+    print("Received theme:", theme)
     response = model.generate_content(f"Write a haiku about {theme}")
     return jsonify({"haiku": response.text})
-
-
-
-
 
 
 
