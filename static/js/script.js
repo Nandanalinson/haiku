@@ -16,12 +16,10 @@ document.getElementById('haiku-form').addEventListener('submit' , function(event
     })
     .then(response => response.json())
     .then(data => { 
+
+        console.log("Data: " + data)
         document.getElementById('haiku-result').innerHTML = `<p>${data.haiku}</p>`;
 
     })
-    .catch(error => {
-        console.error('Error:', error);
-    });
 
-
-    });
+})

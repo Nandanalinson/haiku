@@ -20,13 +20,30 @@ app = Flask(__name__)
 def hello_world():
     return render_template('index.html')
 
-@app.route('/haikus')
+
+@app.route('/api/haikus', methods=['GET'])
 def haikus():
     connect = sqlite3.connect('haikus.db')
-    cur=connect.cursor()
-    cur.execute("SELECT theme,haiku FROM haikus ")
-    hai=cur.fetchall()
-    return hai
+    cur = connect.cursor()
+    cur.execute("SELECT theme, haiku FROM haikus")
+    data = cur.fetchall()
+
+    replaced_data = []
+
+    for theme, haiku in data:
+        clean_theme = theme.replace(',', ':')
+        replaced_data.append(f"Theme: {clean_theme}\n{haiku}\n")
+
+    replaced_data_str = '\n'.join(replaced_data)
+
+    print("data", replaced_data_str)
+
+    return jsonify({"haiku": replaced_data_str})
+
+
+@app.route('/haikus')
+def haikus_page():
+    return render_template('haikus.html')
 
 @app.route("/generate-haiku", methods=['POST'])
 def generate_haiku():
