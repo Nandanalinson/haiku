@@ -57,7 +57,7 @@ def haikus():
 
     replaced_data_str = '\n'.join(replaced_data)
 
-    print("data", replaced_data_str)
+    #print("data", replaced_data_str)
 
     return jsonify({"haiku": replaced_data_str})
 
