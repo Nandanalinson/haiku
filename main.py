@@ -50,6 +50,7 @@ def haikus():
 
     data = cur.fetchall()
     replaced_data = []
+    #replaced
 
     for theme, haiku in data:
         clean_theme = theme.replace(',', ':')
