@@ -81,9 +81,6 @@ def generate_haiku():
                         password="mypassword", 
                         host="localhost", port="5433")
     cur=connect.cursor()
-    
-
-
     cur.execute("CREATE TABLE IF NOT EXISTS haikus (id SERIAL PRIMARY KEY, theme TEXT , haiku TEXT)")
     add_theme = "INSERT INTO haikus (theme, haiku) VALUES (%s, %s)"
    
