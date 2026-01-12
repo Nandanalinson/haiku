@@ -46,6 +46,7 @@ def haikus():
                         host="localhost", port="5433")
 
     cur = connect.cursor()
+
     cur.execute("SELECT theme, haiku FROM haikus")
 
     data = cur.fetchall()
@@ -57,7 +58,7 @@ def haikus():
 
     replaced_data_str = '\n'.join(replaced_data)
 
-    print("data", replaced_data_str)
+    print("data is ", replaced_data_str)
 
     return jsonify({"haiku": replaced_data_str})
 
@@ -80,7 +81,9 @@ def generate_haiku():
                         user="myuser",
                         password="mypassword", 
                         host="localhost", port="5433")
+    
     cur=connect.cursor()
+
     cur.execute("CREATE TABLE IF NOT EXISTS haikus (id SERIAL PRIMARY KEY, theme TEXT , haiku TEXT)")
     add_theme = "INSERT INTO haikus (theme, haiku) VALUES (%s, %s)"
    
